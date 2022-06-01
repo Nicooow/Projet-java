@@ -1,6 +1,7 @@
 import ade.Ade;
 import ade.Classroom;
 import ade.Course;
+import com.sun.tools.javac.Main;
 import net.fortuna.ical4j.data.ParserException;
 
 import java.io.IOException;
@@ -22,5 +23,8 @@ public class main {
                 System.out.println(classroom.getName() + " : " + current.getSummary());
             }
         }
+
+        MainWindow window = new MainWindow();
+        window.main(args);
     }
 }

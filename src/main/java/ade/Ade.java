@@ -3,6 +3,8 @@ package ade;
 import net.fortuna.ical4j.data.CalendarBuilder;
 import net.fortuna.ical4j.data.ParserException;
 import net.fortuna.ical4j.model.Calendar;
+import net.fortuna.ical4j.model.Component;
+import net.fortuna.ical4j.model.component.VEvent;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,6 +12,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.nio.charset.Charset;
+import java.util.Iterator;
 
 public class Ade {
     private String url;
@@ -39,12 +42,18 @@ public class Ade {
     }
 
     public void loadCal() throws IOException, ParserException {
-        //System.out.println(readFileFromUrl(this.url));
         InputStream is;
         is = new URL(this.url).openStream();
         CalendarBuilder builder = new CalendarBuilder();
         Calendar calendar = builder.build(is);
 
         System.out.println(calendar);
+
+        for (Iterator i = calendar.getComponents(Component.VEVENT).iterator(); i.hasNext();) {
+            VEvent event = (VEvent) i.next();
+
+            System.out.println(event);
+        }
+
     }
 }

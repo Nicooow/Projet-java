@@ -1,6 +1,9 @@
 package ade;
 
+import java.text.Format;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Classroom {
     private String name;
@@ -9,6 +12,17 @@ public class Classroom {
     public Classroom(String name) {
         this.name = name;
         this.courses = new ArrayList<>();
+    }
+
+    public Course getCurrentCourse(){
+        Date now = new Date();
+
+        for (Course c : courses){
+            if(now.after(c.getStartDate()) && now.before(c.getEndDate()))
+                return c;
+        }
+
+        return null;
     }
 
     public String getName() {

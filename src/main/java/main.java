@@ -1,4 +1,6 @@
 import ade.Ade;
+import ade.Classroom;
+import ade.Course;
 import net.fortuna.ical4j.data.ParserException;
 
 import java.io.IOException;
@@ -10,6 +12,15 @@ public class main {
             test.loadCal();
         } catch (IOException | ParserException e) {
             e.printStackTrace();
+        }
+
+        for(Classroom classroom : test.getClassrooms().values()){
+            Course current = classroom.getCurrentCourse();
+            if(current == null){
+                System.out.println(classroom.getName() + " : libre");
+            }else{
+                System.out.println(classroom.getName() + " : " + current.getSummary());
+            }
         }
     }
 }

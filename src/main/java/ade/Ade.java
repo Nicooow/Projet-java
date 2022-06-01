@@ -59,7 +59,7 @@ public class Ade {
                 if(classroomName.contains("("))
                     classroomName = classroomName.substring(0, classroomName.indexOf("(")-1);
 
-                if(!classrooms.containsValue(classroomName)){
+                if(!classrooms.containsKey(classroomName)){
                     classrooms.put(classroomName, new Classroom(classroomName));
                 }
 

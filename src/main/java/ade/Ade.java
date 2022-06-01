@@ -12,13 +12,17 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 
 public class Ade {
     private String url;
+    private HashMap<String, Classroom> classrooms;
 
     public Ade(String url) {
         this.url = url;
+        this.classrooms = new HashMap<>();
     }
 
     private static String readAll(BufferedReader rd) throws IOException {
@@ -47,13 +51,30 @@ public class Ade {
         CalendarBuilder builder = new CalendarBuilder();
         Calendar calendar = builder.build(is);
 
-        System.out.println(calendar);
-
         for (Iterator i = calendar.getComponents(Component.VEVENT).iterator(); i.hasNext();) {
             VEvent event = (VEvent) i.next();
 
-            System.out.println(event);
+            String[] classroomsNames = event.getLocation().getValue().split(",");
+            for (String classroomName : classroomsNames){
+                if(classroomName.contains("("))
+                    classroomName = classroomName.substring(0, classroomName.indexOf("(")-1);
+
+                if(!classrooms.containsValue(classroomName)){
+                    classrooms.put(classroomName, new Classroom(classroomName));
+                }
+
+                Course course = new Course(classrooms.get(classroomName), event.getSummary().getValue(), event.getDescription().getValue(), event.getStartDate().getDate(), event.getEndDate().getDate());
+                classrooms.get(classroomName).addCourse(course);
+            }
         }
 
+    }
+
+    public HashMap<String, Classroom> getClassrooms() {
+        return classrooms;
+    }
+
+    public void setClassrooms(HashMap<String, Classroom> classrooms) {
+        this.classrooms = classrooms;
     }
 }

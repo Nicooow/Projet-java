@@ -8,6 +8,7 @@ public class Classroom {
 
     public Classroom(String name) {
         this.name = name;
+        this.courses = new ArrayList<>();
     }
 
     public String getName() {
@@ -24,5 +25,9 @@ public class Classroom {
 
     public void setCourses(ArrayList<Course> courses) {
         this.courses = courses;
+    }
+
+    public void addCourse(Course course){
+        this.courses.add(course);
     }
 }

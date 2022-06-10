@@ -25,13 +25,15 @@ public class MapPanel extends JPanel {
         super.paintComponent(g);
         JSONParser jsonParser = new JSONParser();
         Graphics2D g2 = (Graphics2D) g;
+
         float ratioHeight = (this.getHeight()-100) / 2527f;
         float ratioWidth = (this.getWidth()-100) / 5712f;
+
         int fontSize = Math.round(14*this.getWidth()/(5712f/4f));
 
         try{
-            BufferedImage image = ImageIO.read(new File(this.getClass().getResource("plans/RDC.json").getPath()));
-            g.drawImage(image, 0, 0, null);
+           /* BufferedImage image = ImageIO.read(new File(this.getClass().getResource("plans/RDC.png").getPath()));
+            g.drawImage(image, 0, 0, null);*/
 
             FileReader reader =  new FileReader(this.getClass().getResource("plans/RDC.json").getPath());
             Object obj = jsonParser.parse(reader);

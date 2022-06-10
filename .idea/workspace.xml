@@ -23,20 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d9896b2-9bd1-4b6a-a0d1-c32a851f9190" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_googlecode_json_simple_json_simple_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MapPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/plans/RDC.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/plans/RDC.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EsiPlan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EsiPlan.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainWindow.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/EsiPlan.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MapPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MapPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plans/RDC.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plans/RDC.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plans/RDC.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plans/RDC.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

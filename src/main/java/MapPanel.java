@@ -1,6 +1,8 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,16 +10,19 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class MapPanel extends JPanel {
+public class MapPanel extends JPanel implements MouseListener{
+    HashMap<Polygon, String> polys;
     public MapPanel(JPanel parent) {
         setPreferredSize(parent.getPreferredSize());
         setBackground(Color.white);
+        addMouseListener(this);
     }
 
     @Override
@@ -25,6 +30,7 @@ public class MapPanel extends JPanel {
         super.paintComponent(g);
         JSONParser jsonParser = new JSONParser();
         Graphics2D g2 = (Graphics2D) g;
+        polys = new HashMap();
 
         float ratioHeight = (this.getHeight()-100) / 2527f;
         float ratioWidth = (this.getWidth()-100) / 5712f;
@@ -32,9 +38,6 @@ public class MapPanel extends JPanel {
         int fontSize = Math.round(14*this.getWidth()/(5712f/4f));
 
         try{
-           /* BufferedImage image = ImageIO.read(new File(this.getClass().getResource("plans/RDC.png").getPath()));
-            g.drawImage(image, 0, 0, null);*/
-
             FileReader reader =  new FileReader(this.getClass().getResource("plans/RDC.json").getPath());
             Object obj = jsonParser.parse(reader);
 
@@ -61,6 +64,8 @@ public class MapPanel extends JPanel {
                     }
 
                     Polygon poly = new Polygon(xPoly, yPoly, roomPoints.size());
+                    polys.put(poly, roomName);
+
                     if(roomName.equals("$corridor")){
                         g.setColor(new Color(0xececec));
                         g.fillPolygon(poly);
@@ -72,6 +77,7 @@ public class MapPanel extends JPanel {
                         g.drawPolygon(poly);
                         this.drawCenteredString(g2, roomName, new Rectangle(sumX / roomPoints.size() - 100, sumY / roomPoints.size() - 100, 200, 200), new Font("Arial", Font.BOLD, fontSize));
                     }
+
                 }
             }
 
@@ -103,4 +109,25 @@ public class MapPanel extends JPanel {
         // Draw the String
         g.drawString(text, x, y);
     }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        for (Polygon poly : polys.keySet()){
+            if(poly.contains(new Point(e.getX(), e.getY()))){
+                System.out.println(polys.get(poly));
+            }
+        }
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {}
+
+    @Override
+    public void mouseReleased(MouseEvent e) {}
+
+    @Override
+    public void mouseEntered(MouseEvent e) {}
+
+    @Override
+    public void mouseExited(MouseEvent e) {}
 }

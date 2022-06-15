@@ -24,7 +24,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8d9896b2-9bd1-4b6a-a0d1-c32a851f9190" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ADEEsirem.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ADEEsirem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MapPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MapPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ade/Classroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ade/Classroom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,9 +78,9 @@
       <recent name="D:\Documents\Codes\Java\Projet-java\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainWindow">
-    <configuration name="MainWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MainWindow" />
+  <component name="RunManager" selected="Application.ADEEsirem">
+    <configuration name="ADEEsirem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ADEEsirem" />
       <module name="EsiPlan" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -91,7 +95,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainWindow" />
+        <item itemvalue="Application.ADEEsirem" />
         <item itemvalue="Application.main" />
       </list>
     </recent_temporary>

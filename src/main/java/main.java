@@ -24,9 +24,8 @@ public class main {
             }
         }
 
-        MainWindow.main(args);*/
-        main m = new main();
-        URL ressource = m.getClass().getResource("plans/RDC.json");
-        System.out.println(ressource.getPath());
+        ADEEsirem.main(args);*/
+
+
     }
 }

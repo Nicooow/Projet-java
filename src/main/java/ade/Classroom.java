@@ -15,7 +15,7 @@ public class Classroom {
     }
 
     public Course getCurrentCourse(){
-        Date now = new Date();
+        Date now = new Date(1655284514l*1000);
 
         for (Course c : courses){
             if(now.after(c.getStartDate()) && now.before(c.getEndDate()))

@@ -12,6 +12,8 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import ade.Classroom;
+import ade.Course;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -19,10 +21,14 @@ import org.json.simple.parser.ParseException;
 
 public class MapPanel extends JPanel implements MouseListener{
     HashMap<Polygon, String> polys;
-    public MapPanel(JPanel parent) {
+    ADEEsirem app;
+
+    public MapPanel(JPanel parent, ADEEsirem app) {
+        super();
         setPreferredSize(parent.getPreferredSize());
         setBackground(Color.white);
         addMouseListener(this);
+        this.app = app;
     }
 
     @Override
@@ -36,6 +42,7 @@ public class MapPanel extends JPanel implements MouseListener{
         float ratioWidth = (this.getWidth()-100) / 5712f;
 
         int fontSize = Math.round(14*this.getWidth()/(5712f/4f));
+        Font font = new Font("Arial", Font.BOLD, fontSize);
 
         try{
             FileReader reader =  new FileReader(this.getClass().getResource("plans/RDC.json").getPath());
@@ -46,6 +53,11 @@ public class MapPanel extends JPanel implements MouseListener{
             for (Object _room : rooms.toArray()){
                 ArrayList<Object> roomInfo = (ArrayList<Object>) _room;
                 String roomName = (String) roomInfo.get(0);
+                Course currentCourse = null;
+                if(app.getAde().getClassrooms().containsKey(roomName)){
+                    Classroom classroom = app.getAde().getClassrooms().get(roomName);
+                    currentCourse = classroom.getCurrentCourse();
+                }
                 ArrayList<ArrayList<Long>> roomPoints = (ArrayList<ArrayList<Long>>) roomInfo.get(1);
                 if(roomPoints.size()>3){
                     int[] xPoly = new int[roomPoints.size()];
@@ -75,7 +87,12 @@ public class MapPanel extends JPanel implements MouseListener{
                         g.setColor(Color.BLUE);
                         g2.setStroke(new BasicStroke(2));
                         g.drawPolygon(poly);
-                        this.drawCenteredString(g2, roomName, new Rectangle(sumX / roomPoints.size() - 100, sumY / roomPoints.size() - 100, 200, 200), new Font("Arial", Font.BOLD, fontSize));
+                        if(currentCourse != null){
+                            this.drawCenteredString(g2, roomName, new Rectangle(sumX / roomPoints.size() - 100, sumY / roomPoints.size() - 110, 200, 200), font);
+                            this.drawCenteredString(g2, currentCourse.getSummary(), new Rectangle(sumX / roomPoints.size() - 100, (sumY / roomPoints.size() - 110) + g2.getFontMetrics(font).getHeight(), 200, 200), font);
+                        }else{
+                            this.drawCenteredString(g2, roomName, new Rectangle(sumX / roomPoints.size() - 100, sumY / roomPoints.size() - 100, 200, 200), font);
+                        }
                     }
 
                 }

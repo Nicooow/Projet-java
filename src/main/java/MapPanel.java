@@ -43,6 +43,7 @@ public class MapPanel extends JPanel implements MouseListener{
 
         int fontSize = Math.round(14*this.getWidth()/(5712f/4f));
         Font font = new Font("Arial", Font.BOLD, fontSize);
+        Font subFont = new Font("Arial", Font.BOLD, Math.round(fontSize*0.75f));
 
         try{
             FileReader reader =  new FileReader(this.getClass().getResource("plans/RDC.json").getPath());
@@ -84,13 +85,15 @@ public class MapPanel extends JPanel implements MouseListener{
                     }else {
                         g.setColor(new Color(0xe0e0e0));
                         g.fillPolygon(poly);
-                        g.setColor(Color.BLUE);
                         g2.setStroke(new BasicStroke(2));
-                        g.drawPolygon(poly);
                         if(currentCourse != null){
+                            g.setColor(Color.RED);
+                            g.drawPolygon(poly);
                             this.drawCenteredString(g2, roomName, new Rectangle(sumX / roomPoints.size() - 100, sumY / roomPoints.size() - 110, 200, 200), font);
-                            this.drawCenteredString(g2, currentCourse.getSummary(), new Rectangle(sumX / roomPoints.size() - 100, (sumY / roomPoints.size() - 110) + g2.getFontMetrics(font).getHeight(), 200, 200), font);
+                            this.drawCenteredString(g2, currentCourse.getSummary(), new Rectangle(sumX / roomPoints.size() - 100, (sumY / roomPoints.size() - 110) + g2.getFontMetrics(font).getHeight(), 200, 200), subFont);
                         }else{
+                            g.setColor(Color.BLUE);
+                            g.drawPolygon(poly);
                             this.drawCenteredString(g2, roomName, new Rectangle(sumX / roomPoints.size() - 100, sumY / roomPoints.size() - 100, 200, 200), font);
                         }
                     }

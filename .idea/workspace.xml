@@ -24,9 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8d9896b2-9bd1-4b6a-a0d1-c32a851f9190" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ADEEsirem.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ADEEsirem.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ADEEsirem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ADEEsirem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ade/Classroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ade/Classroom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MapPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MapPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

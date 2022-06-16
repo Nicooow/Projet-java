@@ -59,7 +59,9 @@ public class ADEEsirem {
         });
 
         mapRDJ.setVisible(true);
-        mapRDJ.add(new MapPanel(mapRDJ, this));
+        mapRDJ.add(new MapPanel(mapRDJ, this, "RDJ"));
+        mapRDC.setVisible(true);
+        mapRDC.add(new MapPanel(mapRDC, this, "RDC"));
     }
 
     private void setDateLabel(Date date){

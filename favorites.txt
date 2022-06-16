@@ -1,1 +1,1 @@
-GR01|GR02|Kfet
+GR01|GR02|Kfet|GS26

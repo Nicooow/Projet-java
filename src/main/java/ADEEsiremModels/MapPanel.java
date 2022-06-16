@@ -19,13 +19,15 @@ import org.json.simple.parser.ParseException;
 
 public class MapPanel extends JPanel implements MouseListener{
     HashMap<Polygon, String> polys;
+    String level;
     ADEEsirem app;
 
-    public MapPanel(JPanel parent, ADEEsirem app) {
+    public MapPanel(JPanel parent, ADEEsirem app, String level) {
         super();
         setPreferredSize(parent.getPreferredSize());
         setBackground(Color.white);
         addMouseListener(this);
+        this.level = level;
         this.app = app;
     }
 
@@ -45,7 +47,7 @@ public class MapPanel extends JPanel implements MouseListener{
         Font subFont = new Font("Arial", Font.PLAIN, Math.round(fontSize*0.75f));
 
         try{
-            FileReader reader =  new FileReader(app.getClass().getResource("../plans/RDC.json").getPath());
+            FileReader reader =  new FileReader(app.getClass().getResource("../plans/"+this.level+".json").getPath());
             Object obj = jsonParser.parse(reader);
 
             JSONArray rooms = (JSONArray) obj;

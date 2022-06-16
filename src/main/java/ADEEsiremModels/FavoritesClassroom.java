@@ -45,6 +45,10 @@ public class FavoritesClassroom {
         save();
     }
 
+    public ArrayList<String> getClassrooms() {
+        return classrooms;
+    }
+
     private void save(){
         try {
             PrintWriter writer = new PrintWriter(FavoritesClassroom.PATH_FILE);

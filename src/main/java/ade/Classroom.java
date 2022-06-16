@@ -34,6 +34,21 @@ public class Classroom {
         return null;
     }
 
+    public Course getNextCourse(){
+        Date date;
+        if(fakeDate == null)
+            date = new Date();
+        else
+            date = Classroom.fakeDate;
+
+        for (Course c : courses){
+            if(date.before(c.getStartDate()))
+                return c;
+        }
+
+        return null;
+    }
+
     public String getName() {
         return name;
     }

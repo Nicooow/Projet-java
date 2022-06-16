@@ -4,9 +4,11 @@ import ade.Ade;
 import ade.Classroom;
 import ADEEsiremModels.FavoritesClassroom;
 import ADEEsiremModels.MapPanel;
+import ADEEsiremModels.FavoritesPanel;
 import net.fortuna.ical4j.data.ParserException;
 
 import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -21,14 +23,16 @@ public class ADEEsirem {
     private JPanel favorites;
     private JSlider sliderDate;
     private JLabel dateLabel;
+    private JTabbedPane pane;
     private Date now = new Date();
     public static final long TWO_WEEKS_IN_SECONDS = 1210000l;
 
     private Ade ade;
     private FavoritesClassroom favoriteClassroom;
+    private FavoritesPanel favoritesPanel;
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("ADEEsiremModels");
+        JFrame frame = new JFrame("ADE Esirem");
         frame.setContentPane(new ADEEsirem().root);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
@@ -47,6 +51,16 @@ public class ADEEsirem {
 
         this.favoriteClassroom = new FavoritesClassroom();
 
+        mapRDJ.setVisible(true);
+        mapRDJ.add(new MapPanel(mapRDJ, this, "RDJ"));
+        mapRDC.setVisible(false);
+        mapRDC.add(new MapPanel(mapRDC, this, "RDC"));
+        map1.setVisible(false);
+
+        favorites.setVisible(false);
+        FavoritesPanel favoritesPanel = new FavoritesPanel(favorites, this);
+        favorites.add(favoritesPanel, BorderLayout.CENTER);
+
         this.setDateLabel(now);
         sliderDate.addChangeListener(e -> {
             int value = sliderDate.getValue() + 1; // to avoid zero
@@ -56,12 +70,19 @@ public class ADEEsirem {
             Classroom.setFakeDate(newDate);
             this.setDateLabel(newDate);
             this.mapRDJ.updateUI();
+            this.mapRDC.updateUI();
+            this.map1.updateUI();
+            if(pane.getSelectedIndex() == 3)
+                favoritesPanel.updateTable();
         });
-
-        mapRDJ.setVisible(true);
-        mapRDJ.add(new MapPanel(mapRDJ, this, "RDJ"));
-        mapRDC.setVisible(true);
-        mapRDC.add(new MapPanel(mapRDC, this, "RDC"));
+        pane.addChangeListener(e -> {
+            mapRDJ.setVisible(pane.getSelectedIndex() == 0);
+            mapRDC.setVisible(pane.getSelectedIndex() == 1);
+            map1.setVisible(pane.getSelectedIndex() == 2);
+            if(pane.getSelectedIndex() == 3)
+                favoritesPanel.updateTable();
+            favorites.setVisible(pane.getSelectedIndex() == 3);
+        });
     }
 
     private void setDateLabel(Date date){
@@ -82,5 +103,9 @@ public class ADEEsirem {
 
     public FavoritesClassroom getFavoriteClassroom() {
         return favoriteClassroom;
+    }
+
+    public JPanel getRoot() {
+        return root;
     }
 }

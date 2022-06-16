@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact name="EsiPlan:jar2">
+    <output-path>$PROJECT_DIR$/out/artifacts/EsiPlan_jar2</output-path>
+    <root id="root">
+      <element id="archive" name="EsiPlan.jar">
+        <element id="module-output" name="EsiPlan" />
+      </element>
+      <element id="library" level="project" name="Maven: backport-util-concurrent:backport-util-concurrent:3.1" />
+      <element id="library" level="project" name="Maven: org.mnode.ical4j:ical4j:1.0.2" />
+      <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.1.1" />
+      <element id="library" level="project" name="Maven: junit:junit:4.10" />
+      <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.1" />
+      <element id="library" level="project" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" />
+      <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.6" />
+      <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.5" />
+    </root>
+  </artifact>
+</component>

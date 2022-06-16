@@ -5,20 +5,35 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Class representing a classroom
+ */
 public class Classroom {
     private String name;
     private ArrayList<Course> courses;
     private static Date fakeDate;
 
+    /**
+     * Name of the classroom
+     * @param name Name of the classroom
+     */
     public Classroom(String name) {
         this.name = name;
         this.courses = new ArrayList<>();
     }
 
+    /**
+     * Set a fake date for getting info on course
+     * @param fakeDate
+     */
     public static void setFakeDate(Date fakeDate) {
         Classroom.fakeDate = fakeDate;
     }
 
+    /**
+     * Get the current course in the classroom
+     * @return the current course
+     */
     public Course getCurrentCourse(){
         Date date;
         if(fakeDate == null)
@@ -34,6 +49,10 @@ public class Classroom {
         return null;
     }
 
+    /**
+     * Get the next course in the classroom
+     * @return the next course
+     */
     public Course getNextCourse(){
         Date date;
         if(fakeDate == null)

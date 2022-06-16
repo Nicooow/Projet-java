@@ -12,6 +12,9 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
+/**
+ * Class generating the favorites page
+ */
 public class FavoritesPanel extends JPanel{
     ADEEsirem app;
     JTable table;
@@ -32,6 +35,8 @@ public class FavoritesPanel extends JPanel{
         };
         JTable table = new JTable(model);
         sp = new JScrollPane(table);
+
+        // resize table when window resize
         table.addComponentListener(new ComponentAdapter()
         {
             @Override
@@ -50,7 +55,6 @@ public class FavoritesPanel extends JPanel{
             }
         });
 
-
         model.addColumn("Salle");
         model.addColumn("Cours actuel");
         model.addColumn("Disponible");
@@ -63,8 +67,13 @@ public class FavoritesPanel extends JPanel{
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+        // set the size of the scrollpane when window resize
         sp.setPreferredSize(new Dimension((int) (this.getSize().getWidth()*0.75), (int) (this.getSize().getHeight()*0.7)));
     }
+
+    /**
+     * Update the table
+     */
     public void updateTable() {
         while(model.getRowCount()!=0){
             model.removeRow(0);
@@ -72,6 +81,9 @@ public class FavoritesPanel extends JPanel{
         addRows();
     }
 
+    /**
+     * Add a row on the table
+     */
     private void addRows(){
         Locale locale = new Locale("fr", "FR");
         String pattern = "EEEE dd/MM/yyyy HH:mm";

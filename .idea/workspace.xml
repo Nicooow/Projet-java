@@ -23,10 +23,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d9896b2-9bd1-4b6a-a0d1-c32a851f9190" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/plans/1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/plans/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/EsiPlan_jar2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favorites.txt" beforeDir="false" afterPath="$PROJECT_DIR$/favorites.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ADEEsirem/ADEEsirem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ADEEsirem/ADEEsirem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ADEEsiremModels/FavoritesClassroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ADEEsiremModels/FavoritesClassroom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ADEEsiremModels/FavoritesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ADEEsiremModels/FavoritesPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ADEEsiremModels/MapPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ADEEsiremModels/MapPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ade/Ade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ade/Ade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ade/Classroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ade/Classroom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ade/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ade/Course.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +57,17 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/favorites.txt" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/ADEEsirem/ADEEsirem.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/ADEEsiremModels/FavoritesClassroom.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/ADEEsiremModels/FavoritesPanel.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/ADEEsiremModels/MapPanel.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Main.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/ade/Ade.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/ade/Classroom.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/plans/1.json" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -62,16 +79,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/Documents/Codes/Java/Projet-java/src/main/resources/plans",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Documents/Codes/Java/Projet-java/src/main/resources/plans&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Documents\Codes\Java\Projet-java\src\main\resources\plans" />

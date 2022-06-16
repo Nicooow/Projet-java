@@ -39,6 +39,9 @@ public class ADEEsirem {
         frame.setVisible(true);
     }
 
+    /**
+     * Constructor of the application
+     */
     public ADEEsirem() {
         ade = new Ade("https://plannings.u-bourgogne.fr/jsp/custom/modules/plannings/anonymous_cal.jsp?data=8241fc3873200214cb5d743179aedd5bbcb40f7fa3414b5f09e49fce06dff818324cfcf2e9e6b435826b8d54c6bff1eef43b49ed91b3cccdb0db0d7caf18783af6f896fd5b10973b27880fda6f957ee06e8504f9d2b878bb66ed3eb8f721b666");
         try {
@@ -51,6 +54,7 @@ public class ADEEsirem {
 
         this.favoriteClassroom = new FavoritesClassroom();
 
+        // create the differents tabs
         mapRDJ.setVisible(true);
         mapRDJ.add(new MapPanel(mapRDJ, this, "RDJ"));
         mapRDC.setVisible(false);
@@ -63,6 +67,8 @@ public class ADEEsirem {
         favorites.add(favoritesPanel, BorderLayout.CENTER);
 
         this.setDateLabel(now);
+
+        // when slider move
         sliderDate.addChangeListener(e -> {
             int value = sliderDate.getValue() + 1; // to avoid zero
             long shift = Math.round((TWO_WEEKS_IN_SECONDS*((float)value/1000f) - TWO_WEEKS_IN_SECONDS/2)*1000);
@@ -76,6 +82,8 @@ public class ADEEsirem {
             if(pane.getSelectedIndex() == 3)
                 favoritesPanel.updateTable();
         });
+
+        // when tab selected change, hide the others tabs
         pane.addChangeListener(e -> {
             mapRDJ.setVisible(pane.getSelectedIndex() == 0);
             mapRDC.setVisible(pane.getSelectedIndex() == 1);
@@ -86,6 +94,10 @@ public class ADEEsirem {
         });
     }
 
+    /**
+     * Show the date formatted on the label
+     * @param date date to show
+     */
     private void setDateLabel(Date date){
         Locale locale = new Locale("fr", "FR");
         String pattern = "EEEE dd/MM/yyyy HH:mm";

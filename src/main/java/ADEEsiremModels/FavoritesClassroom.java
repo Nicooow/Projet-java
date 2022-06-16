@@ -9,8 +9,12 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.util.ArrayList;
 
+/**
+ * Handler of the favorites classroom
+ */
 public class FavoritesClassroom {
     private ArrayList<String> classrooms;
+    // Path to the favorites save-file
     final static String PATH_FILE = System.getProperty("user.dir") + "\\favorites.txt";
 
     public FavoritesClassroom() {
@@ -49,6 +53,9 @@ public class FavoritesClassroom {
         return classrooms;
     }
 
+    /**
+     * Save the favorites classroom on the file
+     */
     private void save(){
         try {
             PrintWriter writer = new PrintWriter(FavoritesClassroom.PATH_FILE);

@@ -16,10 +16,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
+/**
+ * Class to manage ADE calendar
+ */
 public class Ade {
     private String url;
     private HashMap<String, Classroom> classrooms;
 
+    /**
+     * Constructor of the class
+     * @param url url of the calendar to parse
+     */
     public Ade(String url) {
         this.url = url;
         this.classrooms = new HashMap<>();
@@ -45,6 +52,11 @@ public class Ade {
         }
     }
 
+    /**
+     * Load the URL and parse the file
+     * @throws IOException
+     * @throws ParserException
+     */
     public void loadCal() throws IOException, ParserException {
         InputStream is;
         is = new URL(this.url).openStream();

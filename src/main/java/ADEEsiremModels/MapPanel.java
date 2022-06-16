@@ -17,6 +17,9 @@ import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+/**
+ * Class generating the map page
+ */
 public class MapPanel extends JPanel implements MouseListener{
     HashMap<Polygon, String> polys;
     String level;
@@ -38,6 +41,7 @@ public class MapPanel extends JPanel implements MouseListener{
         Graphics2D g2 = (Graphics2D) g;
         polys = new HashMap();
 
+        // adapt the polygon with the window shape
         float ratioHeight = (this.getHeight()-100) / 2527f;
         float ratioWidth = (this.getWidth()-100) / 5712f;
 
@@ -119,6 +123,10 @@ public class MapPanel extends JPanel implements MouseListener{
         }
     }
 
+    /**
+     * Call when a classroom is clicked
+     * @param classroom classroom clicked
+     */
     public void classroomClicked(String classroom){
         FavoritesClassroom f = app.getFavoriteClassroom();
         if(f.containsClassroom(classroom))

@@ -1,8 +1,15 @@
 import ade.Ade;
+import ade.Classroom;
 import net.fortuna.ical4j.data.ParserException;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class ADEEsirem {
     private JPanel root;
@@ -10,6 +17,10 @@ public class ADEEsirem {
     private JPanel mapRDC;
     private JPanel map1;
     private JPanel favorites;
+    private JSlider sliderDate;
+    private JLabel dateLabel;
+    private Date now = new Date();
+    public static final long TWO_WEEKS_IN_SECONDS = 1210000l;
 
     private Ade ade;
 
@@ -31,8 +42,27 @@ public class ADEEsirem {
             throw new RuntimeException(e);
         }
 
+        this.setDateLabel(now);
+        sliderDate.addChangeListener(e -> {
+            int value = sliderDate.getValue() + 1; // to avoid zero
+            long shift = Math.round((TWO_WEEKS_IN_SECONDS*((float)value/1000f) - TWO_WEEKS_IN_SECONDS/2)*1000);
+
+            Date newDate = new Date(now.getTime()+shift);
+            Classroom.setFakeDate(newDate);
+            this.setDateLabel(newDate);
+            this.mapRDJ.updateUI();
+        });
+
         mapRDJ.setVisible(true);
         mapRDJ.add(new MapPanel(mapRDJ, this));
+    }
+
+    private void setDateLabel(Date date){
+        Locale locale = new Locale("fr", "FR");
+        String pattern = "EEEE dd/MM/yyyy HH:mm";
+        DateFormat df = new SimpleDateFormat(pattern, locale);
+        String dateString = df.format(date);
+        dateLabel.setText(dateString);
     }
 
     public Ade getAde() {

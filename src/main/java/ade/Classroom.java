@@ -8,17 +8,26 @@ import java.util.Date;
 public class Classroom {
     private String name;
     private ArrayList<Course> courses;
+    private static Date fakeDate;
 
     public Classroom(String name) {
         this.name = name;
         this.courses = new ArrayList<>();
     }
 
+    public static void setFakeDate(Date fakeDate) {
+        Classroom.fakeDate = fakeDate;
+    }
+
     public Course getCurrentCourse(){
-        Date now = new Date(1655284514l*1000);
+        Date date;
+        if(fakeDate == null)
+            date = new Date();
+        else
+            date = Classroom.fakeDate;
 
         for (Course c : courses){
-            if(now.after(c.getStartDate()) && now.before(c.getEndDate()))
+            if(date.after(c.getStartDate()) && date.before(c.getEndDate()))
                 return c;
         }
 

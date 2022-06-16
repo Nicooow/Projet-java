@@ -41,7 +41,8 @@ public class MapPanel extends JPanel implements MouseListener{
 
         int fontSize = Math.round(14*this.getWidth()/(5712f/4f));
         Font font = new Font("Arial", Font.BOLD, fontSize);
-        Font subFont = new Font("Arial", Font.BOLD, Math.round(fontSize*0.75f));
+        Font fontHeart = new Font("Arial", Font.BOLD, Math.round(fontSize*1.4f));
+        Font subFont = new Font("Arial", Font.PLAIN, Math.round(fontSize*0.75f));
 
         try{
             FileReader reader =  new FileReader(app.getClass().getResource("../plans/RDC.json").getPath());
@@ -94,6 +95,14 @@ public class MapPanel extends JPanel implements MouseListener{
                             g.drawPolygon(poly);
                             this.drawCenteredString(g2, roomName, new Rectangle(sumX / roomPoints.size() - 100, sumY / roomPoints.size() - 100, 200, 200), font);
                         }
+                        if(app.getFavoriteClassroom().containsClassroom(roomName)){
+                            g.setColor(Color.MAGENTA);
+                            g.setFont(fontHeart);
+                            if(currentCourse != null)
+                                g2.drawString("♥", (sumX / roomPoints.size())-6, (sumY / roomPoints.size())-20);
+                            else
+                                g2.drawString("♥", (sumX / roomPoints.size())-6, (sumY / roomPoints.size())-11);
+                        }
                     }
 
                 }
@@ -106,6 +115,15 @@ public class MapPanel extends JPanel implements MouseListener{
         } catch (ParseException e) {
             e.printStackTrace();
         }
+    }
+
+    public void classroomClicked(String classroom){
+        FavoritesClassroom f = app.getFavoriteClassroom();
+        if(f.containsClassroom(classroom))
+            f.removeClassroom(classroom);
+        else
+            f.addClassroom(classroom);
+        this.updateUI();
     }
 
     /**
@@ -132,7 +150,9 @@ public class MapPanel extends JPanel implements MouseListener{
     public void mouseClicked(MouseEvent e) {
         for (Polygon poly : polys.keySet()){
             if(poly.contains(new Point(e.getX(), e.getY()))){
-                System.out.println(polys.get(poly));
+                String classroom = polys.get(poly);
+                if(!(classroom == "" || classroom.startsWith("$")))
+                    this.classroomClicked(classroom);
             }
         }
     }

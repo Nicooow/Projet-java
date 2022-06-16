@@ -45,6 +45,8 @@ public class ADEEsirem {
             throw new RuntimeException(e);
         }
 
+        this.favoriteClassroom = new FavoritesClassroom();
+
         this.setDateLabel(now);
         sliderDate.addChangeListener(e -> {
             int value = sliderDate.getValue() + 1; // to avoid zero
@@ -74,5 +76,9 @@ public class ADEEsirem {
 
     public void setAde(Ade ade) {
         this.ade = ade;
+    }
+
+    public FavoritesClassroom getFavoriteClassroom() {
+        return favoriteClassroom;
     }
 }

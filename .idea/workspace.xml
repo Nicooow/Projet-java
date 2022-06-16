@@ -23,8 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d9896b2-9bd1-4b6a-a0d1-c32a851f9190" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ADEEsiremModels/FavoritesClassroom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MapPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MapPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ADEEsirem.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ADEEsirem/ADEEsirem.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ADEEsirem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ADEEsirem/ADEEsirem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MapPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ADEEsiremModels/MapPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,13 +75,27 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\Codes\Java\Projet-java\src\main\java\ADEEsirem" />
       <recent name="D:\Documents\Codes\Java\Projet-java\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ADEEsirem">
+  <component name="RunManager" selected="Application.ADEEsirem.ADEEsirem">
     <configuration name="ADEEsirem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ADEEsirem" />
       <module name="EsiPlan" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ADEEsirem.ADEEsirem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ADEEsirem.ADEEsirem" />
+      <module name="EsiPlan" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ADEEsirem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -91,6 +109,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ADEEsirem.ADEEsirem" />
         <item itemvalue="Application.ADEEsirem" />
         <item itemvalue="Application.main" />
       </list>

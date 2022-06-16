@@ -1,10 +1,12 @@
+package ADEEsirem;
+
 import ade.Ade;
 import ade.Classroom;
+import ADEEsiremModels.FavoritesClassroom;
+import ADEEsiremModels.MapPanel;
 import net.fortuna.ical4j.data.ParserException;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -23,9 +25,10 @@ public class ADEEsirem {
     public static final long TWO_WEEKS_IN_SECONDS = 1210000l;
 
     private Ade ade;
+    private FavoritesClassroom favoriteClassroom;
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("ADEEsirem");
+        JFrame frame = new JFrame("ADEEsiremModels");
         frame.setContentPane(new ADEEsirem().root);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();

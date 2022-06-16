@@ -1,21 +1,19 @@
-import javax.imageio.ImageIO;
+package ADEEsiremModels;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import ADEEsirem.ADEEsirem;
 import ade.Classroom;
 import ade.Course;
 import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
@@ -46,7 +44,7 @@ public class MapPanel extends JPanel implements MouseListener{
         Font subFont = new Font("Arial", Font.BOLD, Math.round(fontSize*0.75f));
 
         try{
-            FileReader reader =  new FileReader(this.getClass().getResource("plans/RDC.json").getPath());
+            FileReader reader =  new FileReader(app.getClass().getResource("../plans/RDC.json").getPath());
             Object obj = jsonParser.parse(reader);
 
             JSONArray rooms = (JSONArray) obj;

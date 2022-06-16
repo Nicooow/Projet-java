@@ -56,6 +56,7 @@ public class ADEEsirem {
         mapRDC.setVisible(false);
         mapRDC.add(new MapPanel(mapRDC, this, "RDC"));
         map1.setVisible(false);
+        map1.add(new MapPanel(map1, this, "1"));
 
         favorites.setVisible(false);
         FavoritesPanel favoritesPanel = new FavoritesPanel(favorites, this);
